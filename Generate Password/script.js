@@ -11,9 +11,9 @@ const symbol = "~!@#$%^&*()_+-=<>/{}[]";
 const allChars = upperCase + lowerCase + number + symbol; 
 
 
-// document.querySelector('#btn').addEventListener('click', createPassword())
+const button = document.querySelector('button');
 
-       function createPassword(){
+    button.addEventListener("click", function createPassword(){
         let password = "";
         password += upperCase[Math.floor(Math.random() * upperCase.length)];
         password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
@@ -28,9 +28,7 @@ const allChars = upperCase + lowerCase + number + symbol;
 
          passwordBox.value = password;
 
-         
-
-       }
+         });
 
 
       function copyPassword(){
