@@ -3,12 +3,34 @@
     padding: 0;
 }
 
+  :root {
+      --primary-color: #edf2fc;
+      --secondary-color: #212121;
+  }
+
+    .dark-theme {
+      --primary-color: #000106;
+      --secondary-color: #fff;   
+    }
+
+
+#icon{
+    width: 30px;
+    cursor: pointer;
+}
+
   .hero {
     height: 100vh;
     width: 100%;
-    background: #edf2fc;
+    background: var(--primary-color);
     font-family: sans-serif;
     position: relative;
+  }
+
+
+  nav ul {
+    flex: 1;
+    text-align: right;
   }
 
   nav {
@@ -23,6 +45,8 @@
   .logo{
     width: 100px;
     cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
   }
 
   nav ul li {
@@ -33,7 +57,7 @@
 
    nav ul li a {
        text-decoration: none;
-       color: #606163;
+       color: var(--secondary-color);
    }
 
 
@@ -48,7 +72,7 @@
 
 .info h1{
       font-size: 70px;
-      color: #212121;
+      color: var(--secondary-color);
 }
 
   .info h1 span {
@@ -56,15 +80,15 @@
   }
 
   .info p {
-      color: #606163;
+      color: var(--secondary-color);
       line-height: 22px
   }
 
   .info a{
-    background: #212121;
+    background: var(--secondary-color);
     padding: 10px 18px;
     text-decoration: none;
-    color: #fff;
+    color: var(--primary-color);
     display: inline-block;
     margin: 30px 0px;
     border-radius: 5px;
@@ -108,12 +132,17 @@
    
    .social-link a{
       font-size: 30px;
-      color: #606163;
+      color: var(--secondary-color);
       margin-right: 20px;
    }
 
    .social-link a:hover{
         color: #ff4321;
+   }
+
+   #icon{
+      background: #fff;
+      border-radius: 50%;
    }
 
    
