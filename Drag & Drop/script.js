@@ -1,43 +1,20 @@
-  
-    const lists = document.querySelector(".list");
-    const rightBox = document.querySelector('#right');
-    const leftBox = document.querySelector('#left')
+const items = document.querySelectorAll('.draggable');
+const containers = document.querySelectorAll('.container');
 
+for (const item of items) {
+    item.addEventListener('dragstart', () => {
+        item.classList.toggle('dragging');
+    });
+    item.addEventListener('dragend', () => {
+        item.classList.toggle('dragging');
+    })
+}
 
-    for(const list of lists){
-        list.addEventListener("dragstart", function(e){
-            let selected = e.tartget;
-
-            rightBox.addEventListener("dragover", function(e){
-              e.preventDefault();
-            });
-
-            rightBox.addEventListener("drop", function (e) {
-                 rightBox.appendChild(selected);
-                 selected = null;
-            })
-            leftBox.addEventListener("dragover", function(e){
-              e.preventDefault();
-            });
-
-            leftBox.addEventListener("drop", function (e) {
-                 leftBox.appendChild(selected);
-                 selected = null;
-            })
-        })
-
-    }
-
-      
-
-
-
-
-
-
-
-
-    
-
-
-    
+for (const container of containers) {
+    console.log(container);
+    container.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const item = document.querySelector('.dragging');
+        container.appendChild(item);
+    });
+}
